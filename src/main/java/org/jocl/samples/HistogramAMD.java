@@ -124,7 +124,7 @@ public class HistogramAMD
     
     /**
      * Allocate and initialize required host memory with appropriate values
-     * @return 1 on success and 0 on failure
+     * @return 0 on success and 1 on failure
      */
     int setupHistogram()
     {
@@ -159,7 +159,7 @@ public class HistogramAMD
      * OpenCL related initialisations. 
      * Set up Context, Device list, Command Queue, Memory buffers
      * Build CL kernel program executable
-     * @return 1 on success and 0 on failure
+     * @return 0 on success and 1 on failure
      */
     int setupCL()
     {
@@ -281,7 +281,7 @@ public class HistogramAMD
      * Set values for kernels' arguments, enqueue calls to the kernels
      * on to the command queue, wait till end of kernel execution.
      * Get kernel start and end time if timing is enabled
-     * @return 1 on success and 0 on failure
+     * @return 0 on success and 1 on failure
      */
     int runCLKernels()
     {
@@ -367,6 +367,7 @@ public class HistogramAMD
     /**
      * Adjust width and height 
      * of execution domain, perform all sample setup
+     * @return 0 on success and 1 on failure
      */
     int setup()
     {
@@ -388,6 +389,7 @@ public class HistogramAMD
 
     /**
      * Run OpenCL Histogram
+     * @return 0 on success and 1 on failure
      */
     int run()
     {
@@ -408,6 +410,7 @@ public class HistogramAMD
 
     /**
      * Cleanup memory allocations
+     * @return 0 on success
      */
     int cleanup()
     {
@@ -429,6 +432,7 @@ public class HistogramAMD
 
     /**
      * Verify against reference implementation
+     * @return 0 on success and 1 on failure
      */
     int verifyResults()
     {
